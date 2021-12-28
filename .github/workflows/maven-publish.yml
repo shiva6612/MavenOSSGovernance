@@ -27,7 +27,7 @@ jobs:
 
     - name: Build with Maven
 #      run: mvn -B package --file pom.xml
-      run: mvn clean install -Dmaven.groupId=junit -Dmaven.artifactId=junit -Dmaven.version=4.8.2 --strict-checksums
+      run: mvn clean install --file ..\..\com.nt.maven\pom.xml -Dmaven.groupId=junit -Dmaven.artifactId=junit -Dmaven.version=4.8.2 --strict-checksums
 
     - name: Publish to GitHub Packages Apache Maven
       run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
