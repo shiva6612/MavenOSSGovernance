@@ -32,6 +32,6 @@ jobs:
       run: mvn clean install --file com.nt.maven/pom.xml -Dmaven.groupId=junit -Dmaven.artifactId=junit -Dmaven.version=4.8.2
 
     - name: Publish to GitHub Packages Apache Maven
-      run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
+      run: mvn deploy -s $GITHUB_WORKSPACE/com.nt.maven/settings.xml
       env:
         GITHUB_TOKEN: ${{ github.token }}
