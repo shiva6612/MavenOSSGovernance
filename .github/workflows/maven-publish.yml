@@ -32,6 +32,6 @@ jobs:
       run: cd com.nt.maven; mvn clean install --file pom.xml -Dmaven.groupId=junit -Dmaven.artifactId=junit -Dmaven.version=4.8.2
 
     - name: Publish to GitHub Packages Apache Maven
-      run: cd com.nt.maven; mvn deploy -s $GITHUB_WORKSPACE/settings.xml -Dmaven.groupId=junit -Dmaven.artifactId=junit -Dmaven.version=4.8.2 --strict-checksums
+      run: cd com.nt.maven; mvn deploy -Dregistry=https://maven.pkg.github.com/phanatic -Dtoken=$GH_TOKEN -s $GITHUB_WORKSPACE/settings.xml -Dmaven.groupId=junit -Dmaven.artifactId=junit -Dmaven.version=4.8.2 --strict-checksums
       env:
         GITHUB_TOKEN: ${{ github.token }}
